@@ -1,4 +1,4 @@
-package exercises;
+package exercises.exercise1;
 
 public class Soma {
     public static void main(String[] args) {

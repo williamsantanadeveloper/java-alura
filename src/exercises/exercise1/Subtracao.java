@@ -1,4 +1,4 @@
-package exercises;
+package exercises.exercise1;
 
 public class Subtracao {
     public static void main(String[] args) {
