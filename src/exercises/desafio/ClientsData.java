@@ -13,9 +13,9 @@ public class ClientsData {
         System.out.print("Saldo inicial: ");
         double openingBalance = reading.nextDouble();
         String menssageClientsData = String.format(
-                "Nome: %s \n"+
-                "Tipo de conta: %s \n"
-        +       "Saldo inicial: %f", name, typeAccount, openingBalance);
+                "Nome: %s \n" +
+                        "Tipo de conta: %s \n"
+                        + "Saldo inicial: %f", name, typeAccount, openingBalance);
         System.out.println("***********************");
         System.out.println(menssageClientsData);
 
@@ -28,26 +28,27 @@ public class ClientsData {
         System.out.println("Digite a opção desejada: ");
         int option = reading.nextInt();
 
-        while (option != 4) {
-            if (option == 1) {
+        switch (option) {
+
+            case 1:
                 System.out.println("Saldo atual: " + openingBalance);
                 break;
-            } else if (option == 2) {
+            case 2:
                 System.out.print("Informe o valor que vai receber: ");
                 double receiveValue = reading.nextDouble();
                 double currentBalance = receiveValue + openingBalance;
                 System.out.println("Saldo atualizado R$ " + currentBalance);
                 break;
-            } else if(option == 3) {
+            case 3:
                 double removingValue = reading.nextDouble();
-                double currentBalance = openingBalance - removingValue;
+                currentBalance = openingBalance - removingValue;
                 if (removingValue > openingBalance) {
                     System.out.println("Não há saldo suficiente para fazer essa transferência.");
                 }
                 System.out.println("Saldo atualizado R$ " + currentBalance);
                 break;
-            }
-            break;
+            default:
+                System.out.println("Inválido");
         }
     }
 }
